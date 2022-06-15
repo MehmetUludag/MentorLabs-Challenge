@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js"></script>    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"main","id":1}];
+var items = [{"id":1,"group":1,"content":"src\/test\/java\/faz1\/users\/api[1:23]","start":1655291105593,"end":1655291106650,"title":"src\/test\/java\/faz1\/users\/api[1:23] 14:05:05.593-14:05:06.650 Get Playlist User"},{"id":2,"group":1,"content":"src\/test\/java\/faz1\/users\/api[2:31]","start":1655291106661,"end":1655291107272,"title":"src\/test\/java\/faz1\/users\/api[2:31] 14:05:06.661-14:05:07.272 Create Playlist"},{"id":3,"group":1,"content":"src\/test\/java\/faz1\/users\/api[3:41]","start":1655291107281,"end":1655291107875,"title":"src\/test\/java\/faz1\/users\/api[3:41] 14:05:07.281-14:05:07.875 Search Bohemian Rhapsody"},{"id":4,"group":1,"content":"src\/test\/java\/faz1\/users\/api[4:51]","start":1655291107880,"end":1655291109443,"title":"src\/test\/java\/faz1\/users\/api[4:51] 14:05:07.880-14:05:09.443 Add tracks to Playlist"}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>
