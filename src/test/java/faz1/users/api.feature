@@ -1,8 +1,7 @@
 Feature: Apı Testing
   Background:
-    * def urlHome = 'https://open.spotify.com/'
     * def userid = '31fro6ogea4w4mbtxywcu4qomzui'
-    * def token = 'Bearer BQCg36rOUMiP7sihEqVy9cRIFvrEdwG_GKcnRzji_HHePpgKJ3arJvTOzU0tDKhnJmQyAVpZvb4F_pUaYnM_omjfdnRD5LuD_26_ZV2cbIyE1BrmY9x2xUlAuIAnpPduSxmHFeU8KGWnjjXHYD-CHzdGonLkg6czjGfUzT390p6K4hOHlD5DuWRiAy2ENJsrskVBbYez0y4FsXUED66TM46sC5x85YfYstZ4rXp-4gOGwGd0ddSk-MWsudKBlquqfg'
+    * def token = 'Bearer BQBpb33LzkO9-iTKhFoh1hMtDpHjHUmqNAGbpsx9tF9s6DfFIuZO19zgsNkQwCwdZKwn0pJQdvVbEDE3857rafJUOFfgczenO6TDla0e-YA8jMIdsKK05m3B4lEjdcynxI96oHK8Mw2_VxCAT4cUo2e-QS4VE79af0-QVbcPOQ9QOc6NK9Rptf1_GOMMdK0CxR4kKKiBVRYfLA4SdQ3J4mZEJK6Kup4KD2ZNIT3b6EdFGc0f2Hpo3aQkfsO_DFCmNWhnXG4xQZWf'
     *  def requestbody =
  """
  {
@@ -26,6 +25,7 @@ Feature: Apı Testing
     And path '/me'
     And header Authorization = token
     When method get
+    Then status 200
 
   @ignore
   @Playlist_id
@@ -36,6 +36,7 @@ Feature: Apı Testing
     And request requestbody
     When method post
     * def playId = response.id
+    Then status 201
 
   @ignore
   @Searching
@@ -47,6 +48,7 @@ Feature: Apı Testing
     And param q = 'Bohemian Rhapsody'
     And param type = 'track'
     When method get
+    Then status 200
 
   @AddTracks
   Scenario: Add tracks to Playlist
@@ -59,4 +61,6 @@ Feature: Apı Testing
     And header Content-Type = 'application/json'
     And request requestAdditembody
     When method post
+    Then status 201
+
 

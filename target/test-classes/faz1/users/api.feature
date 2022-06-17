@@ -1,12 +1,11 @@
 Feature: Apı Testing
   Background:
-    * def urlHome = 'https://open.spotify.com/'
     * def userid = '31fro6ogea4w4mbtxywcu4qomzui'
     * def token = 'Bearer BQCg36rOUMiP7sihEqVy9cRIFvrEdwG_GKcnRzji_HHePpgKJ3arJvTOzU0tDKhnJmQyAVpZvb4F_pUaYnM_omjfdnRD5LuD_26_ZV2cbIyE1BrmY9x2xUlAuIAnpPduSxmHFeU8KGWnjjXHYD-CHzdGonLkg6czjGfUzT390p6K4hOHlD5DuWRiAy2ENJsrskVBbYez0y4FsXUED66TM46sC5x85YfYstZ4rXp-4gOGwGd0ddSk-MWsudKBlquqfg'
     *  def requestbody =
  """
  {
-  "name": " gagagag's",
+  "name": " Mehmet's Playlist",
   "description": "New playlist description",
   "public": false,
 }
@@ -19,6 +18,7 @@ Feature: Apı Testing
   ]
 }
  """
+
   @GetPlaylist
   Scenario: Get Playlist User
     Given url 'https://api.spotify.com/v1/'
