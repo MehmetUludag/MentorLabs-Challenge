@@ -1,0 +1,8 @@
+FAZ2_END-TO-END TEST
+
+Sisteme başarılı şekilde giriş yapılır.
+Arama butonundan "Enter Sandman" aratılır.
+Parça oynatılır ve beğen butonuna basılır.
+Doğru parçanın oynadığı kontrol edilir. (API)
+"My Playlist" adında yeni oynatma listesi oluşturulur. (API)
+Beğenilere eklenen şarkı "My Playlist" oynatma listesine eklenir. (API)
